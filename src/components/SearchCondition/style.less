@@ -1,0 +1,115 @@
+.search_condition_box {
+    .search_bar_rect {
+        height: 44px;
+    }
+    .search_condition {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        background: #fff;
+        border-bottom: 1PX solid #f0f0f0;
+        display: flex;
+    }
+    .condition_item {
+        line-height: 20px;
+        flex: 1;
+        padding: 12px 0;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 700;
+        color: #333;
+        & > svg {
+            position: relative;
+            top: 2px;
+            left: 5px;
+        }
+    }
+    .modal_mask {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: #fff;
+        background: #fff;
+        z-index: 9;
+        overflow-y: auto;
+        height: 100vh;
+        .rect {
+            height: 43px;
+        }
+        .area_item {
+            line-height: 20px;
+            padding: 12px 15px;
+            font-size: 14px;
+            border-bottom: 1PX solid #f0f0f0;
+        }
+        .area_item_mark {
+            background: #f0f0f0;
+        }
+    }
+    .dept_mask_modal_box {
+        display: flex;
+        & > div {
+            flex: 1;
+        }
+        .dept_item {
+            box-sizing: border-box;
+            border-bottom: 1PX solid #f0f0f0;
+            padding: 13px;
+            line-height: 20px;
+            color: #999;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+        }
+        .dept_parent {
+            height: 100vh;
+            overflow-y: auto;
+            .dept_item {
+                background: #f7f7f8;
+                font-size: 14px;
+            }
+            .active {
+                background-color: #fff;
+                color: #333;
+                font-weight: 600;
+            }
+        }
+        .dept_children {
+            height: 100vh;
+            overflow-y: auto;
+            .dept_item {
+                background: #f7f7f8;
+                font-size: 14px;
+            }
+            .active {
+                background-color: #f7f7f8;
+                color: #333;
+                font-weight: 600;
+            }
+        }
+        .empty_class {
+            width: 120px;
+            height: 140px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            & > img {
+                width: 120px;
+                height: 120px;
+            }
+            & > p {
+                line-height: 20px;
+                text-align: center;
+                font-size: 14px;
+                color: #666;
+            }
+        }
+    }
+}

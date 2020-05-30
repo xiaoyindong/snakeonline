@@ -1,0 +1,48 @@
+{
+  "name": "snakeonline",
+  "version": "1.0.0",
+  "description": "贪食蛇",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --progress --inline --content-base --open --env=development --host",
+    "build": "rm -rf ./build && webpack --env=production --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaoyindong/snakeonline.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiaoyindong/snakeonline/issues"
+  },
+  "homepage": "https://github.com/xiaoyindong/snakeonline#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-import": "^1.13.0",
+    "css-loader": "^3.5.3",
+    "glob": "^7.1.6",
+    "html-webpack-plugin": "^4.3.0",
+    "less": "^3.11.1",
+    "less-loader": "^6.1.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "px2rem-loader": "^0.1.9",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "antd-mobile": "^2.3.2",
+    "axios": "^0.19.2",
+    "dayjs": "^1.8.27",
+    "exif-js": "^2.3.0",
+    "js-cookie": "^2.2.1",
+    "lib-flexible": "^0.3.2",
+    "react-mobile-image-viewer": "^1.2.2",
+    "xss": "^1.0.6"
+  }
+}

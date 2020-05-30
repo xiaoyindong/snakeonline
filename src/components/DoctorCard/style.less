@@ -1,0 +1,92 @@
+.doctor_card_item {
+    border-top: 1PX solid #f0f0f0;
+    &:first-child {
+        border-top: none;
+    }
+    display: flex;
+    padding: 15px 0;
+    .doctor_photo {
+        & > img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+    }
+    .doctor_info {
+        flex: 1;
+        padding-left: 10px;
+        & > div {
+            .doctor_name {
+                margin-right: .266667rem;
+                font-size: 17px;
+                font-weight: 700;
+                color: #333;
+            }
+            .doctor_title {
+                font-size: 14px;
+                color: #333;
+            }
+        }
+        .doctor_hospital {
+            font-size: 14px;
+            color: #333;
+        }
+        .label_list {
+            padding: 10px 0;
+            .label_item {
+                padding: 2px 5px;
+                margin-right: 5px;
+                -webkit-transform: scaleY(1);
+                transform: scaleY(1);
+                background-color: #fff2e0;
+                border-radius: 2px;
+                font-size: 11px;
+                font-weight: 400;
+                color: #ff8618;
+                line-height: 1.2;
+                float: left;
+            }
+            &::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+        }
+        & > p {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            line-height: 20px;
+            font-size: 13px;
+            color: #666;
+            padding: 0;
+            margin: 0;
+        }
+        .number_score {
+            padding-top: 20px;
+            margin: 0;
+            font-size: 12px;
+            color: #999;
+            position: relative;
+            overflow: initial;
+            .value {
+                color: #ff6865;
+                padding: 0 10px;
+            }
+            .consult_btn {
+                align-items: center;
+                width: 96px;
+                height: 30px;
+                background: #18a2ff;
+                border-radius: 15px;
+                font-size: 13px;
+                color: #fff;
+                position: absolute;
+                border: none;
+                bottom: -5px;
+                right: 0;
+            }
+        }
+    }
+}
