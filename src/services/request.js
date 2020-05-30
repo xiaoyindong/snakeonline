@@ -6,10 +6,10 @@ import urlparams from '@utils/urlparams';
 
 import { baseURL } from './config';
 
-const TOKENKEY = 'x-weimai-token';
-let TOKENVALUE = Cookies.get(TOKENKEY) || '93299a57-8647-426c-9203-3e33a0452e6c';
+const TOKENKEY = 'token';
+let TOKENVALUE = Cookies.get(TOKENKEY) || '';
 if (urlparams.domain) {
-  TOKENVALUE = Cookies.get('x-open-token');
+  TOKENVALUE = Cookies.get('token');
 }
 /** http defaults */
 axios.defaults.baseURL = baseURL;
