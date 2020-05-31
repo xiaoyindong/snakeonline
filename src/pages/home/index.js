@@ -3,5 +3,7 @@
  */
 import '@global';
 import 'lib-flexible';
+import Background from './Background';
+import Play from './Play';
 
-alert(123)
+new Background();
