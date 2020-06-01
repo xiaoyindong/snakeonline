@@ -5,7 +5,7 @@ class Play {
     }
 
     render() {
-
+        return '123';
     }
 }
 
