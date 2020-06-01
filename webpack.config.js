@@ -1,6 +1,5 @@
 const path = require('path');
 const glob = require('glob');
-const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -73,7 +72,6 @@ module.exports = (mode = 'development') => ({
                     loader: 'babel-loader',
                     options: {
                         presets: [
-                            // require.resolve('@babel/preset-react'),
                             [
                                 require.resolve('@babel/preset-env'),
                                 {
@@ -95,9 +93,7 @@ module.exports = (mode = 'development') => ({
         extensions: ['.css', '.less', '.js', '.jsx',],
         alias: {
             "@": path.resolve("src"),
-            "@component": path.resolve("src/components"),
             "@pages": path.resolve("src/pages"),
-            "@services": path.resolve("src/services"),
             "@utils": path.resolve("src/utils"),
             "@route": path.resolve("src/utils/route"),
             "@global": path.resolve("src/global.less"),
