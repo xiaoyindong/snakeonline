@@ -12,4 +12,10 @@ on:
       - master
 
 jobs:
-  test
+  test:
+    name: My Test
+      runs-on: ubuntu-latest
+      steps:
+      - name: Print a greeting
+      run:
+        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
