@@ -4,7 +4,6 @@ class Background {
     constructor() {
         this.canvas = null;
         this.render();
-        console.log(this.canvas);
     }
 
     render() {
@@ -14,6 +13,10 @@ class Background {
         canvas.height = window.innerHeight;
         this.canvas = canvas;
         document.body.appendChild(canvas);
+    }
+
+    getTarget() {
+        return this.canvas;
     }
 }
 export default Background;
