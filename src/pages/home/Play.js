@@ -10,6 +10,7 @@ class Play {
         const html = `<div>123</div>`;
         ele.innerHTML = html;
         document.body.appendChild(ele);
+
     }
 }
 
