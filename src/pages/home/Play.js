@@ -5,7 +5,6 @@ class Play {
         this.y = y || 50;
         this.render();
         this.drawing();
-
     }
 
     render() {
