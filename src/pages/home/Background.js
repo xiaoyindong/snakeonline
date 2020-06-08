@@ -18,5 +18,6 @@ class Background {
     getTarget() {
         return this.canvas;
     }
+    
 }
 export default Background;
