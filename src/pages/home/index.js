@@ -17,6 +17,16 @@ class SnakeGame{
         // this.plays.push(new Play('张三'));
         this.plays[play1.getId()] = play1;
         document.onkeypress = (e) => {
+            console.log(e);
+            if (e.key === 'a') {
+                play1.setDir(-1, 0);
+            } else if (e.key === 's') {
+                play1.setDir(0, 1);
+            } else if (e.key === 'd') {
+                play1.setDir(1, 0);
+            } else if (e.key === 'w') {
+                play1.setDir(0, -1);
+            }
         }
         // this.plays[play2.getId()] = play2;
         // this.animation();

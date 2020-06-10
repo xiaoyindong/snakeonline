@@ -2,12 +2,14 @@ class Play {
     constructor(name, x, y, radius, level) {
         this.name = name;
         this.id = Math.round(Math.random() * 100000000);
+        this.diff = 2;
         this.speedX = 1;
         this.speedY = 1;
         this.x = x || 60;
         this.y = y || 50;
-        this.radius = radius || 10;
-        this.level = level || 3;
+        
+        this.radius = radius || 8;
+        this.level = level || 30;
         this.initBody();
         this.render();
         this.drawing();
@@ -15,7 +17,7 @@ class Play {
     }
     initBody() {
         const body = []
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < this.level; i++) {
             if (!i) {
                 body[i] = {
                     x: this.x,
@@ -24,9 +26,9 @@ class Play {
                 }
             } else {
                 body[i] = {
-                    x: body[i - 1].x - body[i - 1].radius,
-                    y: body[i - 1].y - body[i - 1].radius,
-                    radius: body[i - 1].radius - 1,
+                    x: body[i - 1].x - this.diff,
+                    y: body[i - 1].y - this.diff,
+                    radius: body[i - 1].radius - 0.1,
                 }
             }
         }
@@ -49,7 +51,10 @@ class Play {
         this.ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
         this.body.forEach((data, i) => {
             this.ctx.beginPath();
-            this.ctx.arc(data.x, data.y, data.radius, 0, Math.PI * 2, false);
+            if (i % 4 === 0) {
+                this.ctx.arc(data.x, data.y, data.radius, 0, Math.PI * 2, false);
+            }
+            
             this.ctx.fillStyle = "rgba(192,80,77,0.7)";//半透明的红色
             this.ctx.fill();
             this.ctx.strokeStyle = "rgba(192,80,77,1)";//红色
@@ -64,16 +69,25 @@ class Play {
             y,
             radius: this.radius,
         });
-        this.body = this.body.reverse();
+        // this.body = this.body.reverse();
         // this.updateBody();
-        console.log(this.body);
+        this.body.forEach((item, i) => {
+            if (i) {
+                this.body[i - 1].radius = item.radius;
+            }
+        })
+        this.body.pop();
+        // console.log(this.body);
         this.drawing();
     }
 
     requestAnimationFrame() {
-        this.moveTo(this.x + this.speedX, this.y + this.speedY);
-        // requestAnimationFrame(this.requestAnimationFrame.bind(this))
-
+        this.moveTo(this.x + this.speedX * this.diff, this.y + this.speedY * this.diff);
+        requestAnimationFrame(this.requestAnimationFrame.bind(this))
+    }
+    setDir(speedX = this.speedX, speedY = this.speedY) {
+        this.speedX = speedX;
+        this.speedY = speedY;
     }
 }
 
