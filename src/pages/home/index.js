@@ -4,23 +4,35 @@
 import '@global';
 import 'lib-flexible';
 import './home.less';
-// import anmition from '@utils/Timer';
+// import animation from '@utils/Timer';
 // import Background from './Background';
 import Play from './Play';
 
-let id = 1;
 class SnakeGame{
     constructor() {
         this.plays = {};
-        this.plays[id] = new Play();
-        // this.anmition();
+        const play1 = new Play('张三');
+        // const play2 = new Play('李四');
+        // this.plays.push();
+        // this.plays.push(new Play('张三'));
+        this.plays[play1.getId()] = play1;
+        document.onkeypress = (e) => {
+        }
+        // this.plays[play2.getId()] = play2;
+        // this.animation();
     }
 
-    // anmition() {
-    //     anmition.add('1', () => {
-    //         // console.log(123);
-    //         // play1.moveTo(Math.round(Math.random() * 2), Math.round(Math.random() * 2));
-    //     });
+    // animation() {
+    //     Object.keys(this.plays).forEach(id => {
+    //         this.plays[id].animation();
+    //     })
+    //     // console.log(123);
+    //     requestAnimationFrame(this.animation.bind(this))
+    //     // anmition.add('1', () => {
+    //     //     // console.log(123);
+
+    //     //     // play1.moveTo(Math.round(Math.random() * 2), Math.round(Math.random() * 2));
+    //     // });
     // }
 
 }
@@ -35,8 +47,6 @@ new SnakeGame();
 // ctx.fillStyle="#FF0000";
 // ctx.fillRect(0,0,150,75);
 
-
-const play1 = new Play();
 
 
 
