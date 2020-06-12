@@ -7,27 +7,48 @@ import './home.less';
 // import animation from '@utils/Timer';
 // import Background from './Background';
 import Play from './Play';
+import Handle from './Handle';
 
-class SnakeGame{
+class SnakeGame {
     constructor() {
         this.plays = {};
+        const handle = new Handle();
         const play1 = new Play('张三');
-        // const play2 = new Play('李四');
-        // this.plays.push();
-        // this.plays.push(new Play('张三'));
-        this.plays[play1.getId()] = play1;
-        document.onkeypress = (e) => {
-            console.log(e);
-            if (e.key === 'a') {
-                play1.setDir(-1, 0);
-            } else if (e.key === 's') {
-                play1.setDir(0, 1);
-            } else if (e.key === 'd') {
+        // document.onkeypress = (e) => {
+        //     console.log(e);
+        //     if (e.key === 'a') {
+        //         play1.setDir(-1, 0);
+        //     } else if (e.key === 's') {
+        //         play1.setDir(0, 1);
+        //     } else if (e.key === 'd') {
+        //         play1.setDir(1, 0);
+        //     } else if (e.key === 'w') {
+        //         play1.setDir(0, -1);
+        //     }
+        // }
+
+        handle.dir((dir) => {
+            if (dir === 'up') {
                 play1.setDir(1, 0);
-            } else if (e.key === 'w') {
+            }
+            if (dir === 'right') {
+                play1.setDir(0, 1);
+            }
+            if (dir === 'down') {
+                play1.setDir(-1, 0);
+            }
+            if (dir === 'left') {
                 play1.setDir(0, -1);
             }
-        }
+            console.log(dir);
+        })
+
+        handle.fast(() => {
+            play1.setSpeed(1);
+        });
+        handle.slow(() => {
+            play1.setSpeed(3);
+        });
         // this.plays[play2.getId()] = play2;
         // this.animation();
     }

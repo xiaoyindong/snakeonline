@@ -4,7 +4,7 @@
   "description": "贪食蛇",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --inline --content-base --open --env=development --host",
+    "start": "webpack-dev-server --progress --inline --content-base --open --env=development --host 0.0.0.0",
     "build": "rm -rf ./build && webpack --env=production --progress"
   },
   "repository": {
