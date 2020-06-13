@@ -17,7 +17,7 @@ class Play {
         this.initBody();
         this.render();
         this.drawing();
-        // this.requestAnimationFrame();
+        this.requestAnimationFrame();
     }
     initBody() {
         const body = []

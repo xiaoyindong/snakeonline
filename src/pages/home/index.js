@@ -14,33 +14,9 @@ class SnakeGame {
         this.plays = {};
         const handle = new Handle();
         const play1 = new Play('张三');
-        // document.onkeypress = (e) => {
-        //     console.log(e);
-        //     if (e.key === 'a') {
-        //         play1.setDir(-1, 0);
-        //     } else if (e.key === 's') {
-        //         play1.setDir(0, 1);
-        //     } else if (e.key === 'd') {
-        //         play1.setDir(1, 0);
-        //     } else if (e.key === 'w') {
-        //         play1.setDir(0, -1);
-        //     }
-        // }
 
-        handle.dir((dir) => {
-            if (dir === 'up') {
-                play1.setDir(1, 0);
-            }
-            if (dir === 'right') {
-                play1.setDir(0, 1);
-            }
-            if (dir === 'down') {
-                play1.setDir(-1, 0);
-            }
-            if (dir === 'left') {
-                play1.setDir(0, -1);
-            }
-            console.log(dir);
+        handle.dir((x, y, dir) => {
+            play1.setDir(x, y);
         })
 
         handle.fast(() => {
@@ -49,23 +25,7 @@ class SnakeGame {
         handle.slow(() => {
             play1.setSpeed(3);
         });
-        // this.plays[play2.getId()] = play2;
-        // this.animation();
     }
-
-    // animation() {
-    //     Object.keys(this.plays).forEach(id => {
-    //         this.plays[id].animation();
-    //     })
-    //     // console.log(123);
-    //     requestAnimationFrame(this.animation.bind(this))
-    //     // anmition.add('1', () => {
-    //     //     // console.log(123);
-
-    //     //     // play1.moveTo(Math.round(Math.random() * 2), Math.round(Math.random() * 2));
-    //     // });
-    // }
-
 }
 
 new SnakeGame();
