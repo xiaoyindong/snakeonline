@@ -30,6 +30,8 @@ class SnakeGame {
 
 new SnakeGame();
 
+
+
 // const back = new Background();
 
 // const canvas = back.getTarget();
