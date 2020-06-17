@@ -19,6 +19,7 @@ class Play {
         this.drawing();
         this.requestAnimationFrame();
     }
+
     initBody() {
         const body = []
         for (let i = 0; i < this.level; i++) {
@@ -51,7 +52,6 @@ class Play {
         }
         
         this.body = body;
-        console.log(this.body);
     }
     getId() {
         return this.id;
