@@ -39,5 +39,3 @@ new SnakeGame();
 // ctx.fillRect(0,0,150,75);
 
 // const anmition = new Timer();
-
-
